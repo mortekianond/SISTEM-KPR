@@ -17,6 +17,7 @@
 ![WhatsApp Image 2021-12-26 at 1 38 28 PM](https://user-images.githubusercontent.com/96411548/147422179-fe44de60-0228-46f1-8490-9628eea7aa32.jpeg)
 
 #### Syarat - syarat dan dokumen KPR
+![WhatsApp Image 2021-12-26 at 1 43 57 PM](https://user-images.githubusercontent.com/96411548/147422205-88092d9f-8e05-4b72-a372-5304dd70c278.jpeg)
 
 
 
@@ -44,4 +45,46 @@ daerah tertentu)
 Dengan Sistem penghitungan KPR yang kami kerjakan ini semoga membantu orang - orang dalam
 memperkirakan biaya untuk pembelian sebuah rumah secara KPR
 
-CARA PENGGUNAAN APLIKASI
+## Data Yang Digunakan
+
+Pada program simulasi KPR ini, data - data yang kami gunakan ialah data rumah berupa
+
+
+__1. TIPE RUMAH__ >> tipe 36, tipe 45, tipe 54, tipe 60, tipe 70
+
+
+__2. LUAS TIPE RUMAH TERSEBUT__
+
+
+__3. HARGA CASH RUMAH TERSEBUT__
+
+## Metode Yang Digunakan
+
+Metode yang diterapkan 
+- Menampilkan data
+- Menambahkan data
+- Program perhitungan simulasi KPR 
+- Searching data
+- Hapus data
+- Sorting data (Bubble sort dan Insertion sort)
+- OFstream 
+- Clearscreen 
+
+## List Menu
+
+1. Daftar Tipe Rumah
+2. Simulasi KPR
+3. Buat Data Baru
+4. Urutkan Tipe Rumah
+5. Cari Tipe Rumah
+6. Hapus Data Rumah
+7. Syarat - syarat dan Dokumen
+8. Keluar
+
+![WhatsApp Image 2021-12-26 at 1 35 54 PM](https://user-images.githubusercontent.com/96411548/147416076-8cc83cbf-50a2-4fcd-a68d-98442874fbf1.jpeg)
+
+## Cara Penggunaan Aplikasi
+
+1. 
+
+

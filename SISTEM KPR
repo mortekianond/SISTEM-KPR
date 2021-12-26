@@ -1,0 +1,519 @@
+// IMPORT LIBRARY
+// =====================================================
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+// STRUCT DATA RUMAH
+// =====================================================
+struct kpr{
+	char type[20];
+	float luas;
+	float panjang;
+	float lebar;
+	float harga;
+} rumah[50];
+
+
+
+// DEKLARASI DATA RUMAH
+// =====================================================
+void cekdatarumah();
+void cekdatarumah(){
+	// Type ============================================
+    char house_type[5][20] = {"36", "45", "54", "60", "70"};
+//    int house_type[5] = {36, 45, 54, 60, 70};
+    
+    // Cash ============================================
+    float house_price[5] = {120000000, 320000000, 480000000, 720000000, 920000000};
+    
+    // Specification ===================================
+    float house_area[5] = {36, 45, 54, 60, 70};
+    float house_lenght[5] = {6, 7.5, 6, 10, 10};
+    float house_width[5] = {6, 6, 9, 6, 7};
+
+	for(int i = 0; i < 5; i++){
+		strcpy(rumah[i].type, house_type[i]);
+		rumah[i].luas = house_area[i];
+		rumah[i].panjang = house_lenght[i];
+		rumah[i].lebar = house_width[i];
+		rumah[i].harga = house_price[i];
+		
+    }
+}
+
+// VARIABEL GLOBAL
+// =====================================================
+int pilihan;
+int index_data = 5;
+
+// DEKLARASI FUNGSI
+// =====================================================
+void menu();
+void close();
+void input_data(int index);
+float rumus_kpr();
+void read_data();
+
+// MENU
+void daftar_rumah();
+void simulasi_kpr();
+void buat_data();
+void perbarui_data();
+void urutkan_rumah();
+void cari_rumah();
+void syarat_dokumen();
+void hapus_data();
+
+// SORTING
+void sort_harga_ascending();
+void sort_harga_descending();
+
+// SEARCHING
+void linear_search();
+void binary_search();
+
+// MAIN FUNCTION
+// =====================================================
+int main(){
+	system("cls");
+
+	char kembali;
+	cekdatarumah();
+
+	// Menu
+	// =================================================
+	do {
+		menu:
+			system("cls");
+			printf("===============================================================================================\n");
+			printf("===============================================================================================\n");
+			printf("== PROGRAM PERHITUNGAN KREDIT RUMAH (KPR) =====================================================\n");
+			printf("== PEMROGRAMAN LANJUT =========================================================================\n");
+			printf("== KELOMPOK 1 =================================================================================\n");
+			printf("===============================================================================================\n");
+			printf("===============================================================================================\n");
+
+			printf("\n MAIN MENU:");
+			printf("\n [1]. Daftar Tipe Rumah");
+			printf("\n [2]. Simulasi KPR");
+			printf("\n [3]. Buat Data Baru");
+			printf("\n [4]. Urutkan Tipe Rumah");
+			printf("\n [5]. Cari Tipe Rumah");
+			printf("\n [6]. Hapus Data Rumah");
+			printf("\n [7]. Syarat-syarat dan Dokumen");
+			printf("\n [8]. Keluar");
+			printf("\n\n Input Pilihan Nomor Menu : ");
+			scanf("%d", &pilihan);
+			switch(pilihan){
+				case 1:
+					// MEMANGGIL FUNGSI daftar_rumah()
+					daftar_rumah();
+					printf("\n");
+				break;
+				case 2:
+					// MEMANGGIL FUNGSI simulasi_kpr()
+					simulasi_kpr();
+					printf("\n");
+				break;
+				case 3:
+					// MEMANGGIL FUNGSI buat_data()
+					buat_data();
+					printf("\n");
+				break;
+				case 4:
+					// MEMANGGIL FUNGSI urutkan_rumah()
+					urutkan_rumah();
+					printf("\n");
+				break;
+				case 5:
+					// MEMANGGIL FUNGSI cari_rumah()
+					cari_rumah();
+					printf("\n");
+				break;
+				case 6:
+					// MEMANGGIL FUNGSI hapus_data()
+					hapus_data();
+					printf("\n");
+				break;
+				case 7:
+					// MEMANGGIL FUNGSI syarat_dokumen()
+					syarat_dokumen();
+					printf("\n");
+				break;
+				case 8:
+					// MEMANGGIL FUNGSI close()
+					close();
+					printf("\n");
+				break;
+				default:printf("\n Mohon Maaf Pilihan Anda Tidak Termasuk Dalam Menu!");
+					goto menu;
+			}
+
+			printf("\n =====================================\n");
+			printf(" Ingin kembali ke menu pilihan? (Y/T): ");
+			scanf("%c", &kembali); scanf("%c", &kembali);
+
+	} while(kembali == 'y' || kembali == 'Y');
+
+	return 0;
+}
+
+// CLOSE FUNCTION
+// =====================================================
+void close(){
+	exit(0);
+}
+
+// =====================================================
+// =====================================================
+// =====================================================
+
+// INPUT DATA
+// =====================================================
+void input_data(int index){
+	
+	for (int i = index_data; i < (index_data+1); i++){
+
+        printf(" Nama Tipe Rumah: ");
+		fflush(stdin);
+        scanf("%s", &rumah[i].type);
+        printf(" Luas Rumah: ");
+        scanf("%f", &rumah[i].luas);
+        printf(" Panjang Rumah: ");
+        scanf("%f", &rumah[i].panjang);
+        printf(" Lebar Rumah: ");
+        scanf("%f", &rumah[i].lebar);
+        printf(" Harga Rumah: ");
+        scanf("%f", &rumah[i].harga);
+        
+    }
+    
+    printf("\n Data rumah sudah disimpan !\n");
+}
+
+// READ DATA
+// =============================
+void read_data(){
+	
+	for(int i = 0; i < index_data; i++) {
+		printf("\n ==================================================================\n");
+		printf(" Tipe Rumah\t: %s \n", rumah[i].type);
+		printf(" Harga Cash\t: Rp. %0.2f \n", rumah[i].harga);
+		
+	}
+}
+
+
+// 1. DAFTAR TYPE RUMAH
+// =====================================================
+void daftar_rumah(){
+	system("cls");
+	for(int i = 0; i < index_data; i++) {
+		printf("\n ==================================================================\n");
+		printf(" =========================== RUMAH KE-%d ===========================\n", i+1);
+		printf(" Tipe Rumah\t: %s \n", rumah[i].type);
+		printf(" Luas \t\t: %0.1f m^2 (%0.1f * %0.1f) \n", rumah[i].luas, rumah[i].panjang, rumah[i].lebar);
+		printf(" Harga Cash\t: Rp. %0.2f \n\n", rumah[i].harga);
+		
+	}
+}
+
+
+// 2. SIMULASI KPR
+// =====================================================/
+void simulasi_kpr(){
+    system("cls");
+    printf(" ================================================================== \n");
+	printf(" -------------------------- Simulasi KPR -------------------------- \n\n");
+	
+    printf(" Terima kasih telah menggunakan kami.\n\n");
+    
+    float harga_rumah, persentase_dp, uang_muka, pinjaman, tenor_tahun, tenor_bulan, bunga_pertahun, angsuran_perbulan;
+    
+    printf(" Harga Rumah: ");
+    scanf("%f", &harga_rumah);
+    printf(" Persentase DP (0 - 100): ");
+    scanf("%f", &persentase_dp);
+    
+    uang_muka = persentase_dp * harga_rumah / 100;
+    pinjaman = harga_rumah - uang_muka;
+    
+    printf(" Tenor (tahun): ");
+    scanf("%f", &tenor_tahun);
+    printf(" Bunga per Tahun: ");
+    scanf("%f", &bunga_pertahun);
+    
+    tenor_bulan = 12 * tenor_tahun;
+    
+    angsuran_perbulan = (pinjaman * bunga_pertahun * tenor_tahun) / (tenor_bulan * 100);
+    
+    
+    printf("\n ================================================================== \n\n");
+	printf(" Harga Rumah\t\t: Rp. %0.2f \n", harga_rumah);
+	printf(" Uang Muka\t\t: Rp. %0.2f \n", uang_muka);
+	printf(" Pinjaman\t\t: Rp. %0.2f \n", pinjaman);
+	printf(" Tenor (tahun)\t\t: %0.1f tahun\n", tenor_tahun);
+	printf(" Bunga (tahun)\t\t: %0.1f %% \n", bunga_pertahun);
+	printf(" Angsuran per Bulan\t: Rp. %0.2f \n", angsuran_perbulan);
+    
+}
+
+// 3. BUAT DATA BARU
+// =====================================================
+void buat_data(){
+    system("cls");
+    printf(" ================================================================== \n");
+	printf(" ------------------------- Buat Data Baru ------------------------- \n\n");
+	
+	printf(" Isi data di di bawah ini untuk membuat data baru! \n\n");
+	
+	input_data(index_data);
+	index_data++;
+	
+}
+
+// 4. PERBARUI DATA
+// =====================================================
+void perbarui_data(){
+    system("cls");
+    printf(" ================================================================== \n");
+	printf(" ------------------------- Perbarui data -------------------------- \n\n");
+	
+	int i,flag;
+	char type[20];
+
+	printf(" Masukkan type rumah yang ingin diubah: ");
+	fflush(stdin);
+	scanf("%s", &type);
+	
+	for (i = 0; i < index_data; i++){  
+        if(strcmp(rumah[i].type, type) == 0){  
+            flag = 1; 
+            break; 
+        } else   
+        
+		flag = 0;  
+    }   
+    
+	if(flag == 1){
+		printf("\n Data tipe rumah %s ditemukan di daftar rumah ke-%d!\n\n", type, i+1);
+		input_data(i);
+	} else {
+		printf("\n Data tipe rumah %s tidak ditemukan!", type);
+	}
+
+}
+
+// 5. URUTKAN TIPE RUMAH
+// =====================================================
+void urutkan_rumah(){
+	char kembali;
+
+	// Sorting Menu
+	// =================================================
+	do {
+		menu:
+			system("cls");
+		    printf(" ================================================================== \n");
+			printf(" ---------------------- Urutkan type rumah ------------------------ \n\n");
+			
+			printf("\n URUTKAN TIPE RUMAH:");
+			printf("\n [1]. Urutkan harga ascending");
+			printf("\n [2]. Urutkan harga descending");
+			printf("\n [3]. Keluar");
+			printf("\n\n Input Pilihan Nomor Menu : ");
+			scanf("%d", &pilihan);
+			switch(pilihan){
+				case 1:
+					// MEMANGGIL FUNGSI sort_harga_ascending() dan read_data()
+					sort_harga_ascending();
+					read_data();
+					printf("\n");
+				break;
+				case 2:
+					// MEMANGGIL FUNGSI sort_harga_descending() dan read_data()
+					sort_harga_descending();
+					read_data();
+					printf("\n");
+				break;
+				case 3:
+					// MEMANGGIL FUNGSI close()
+					close();
+					printf("\n");
+				break;
+				default:printf("\n Mohon Maaf Pilihan Anda Tidak Termasuk Dalam Menu!");
+					goto menu;
+			}
+
+			printf("\n =====================================\n");
+			printf(" Ingin kembali ke menu pilihan? (Y/T): ");
+			scanf("%c", &kembali); scanf("%c", &kembali);
+
+	} while(kembali == 'y' || kembali == 'Y');
+}
+
+// SORTING HARGA ASCENDING
+// =====================================================
+void sort_harga_ascending(){
+	system("cls");
+    printf(" ================================================================== \n");
+	printf(" --------------------- Sorting Harga Ascending -------------------- \n\n");
+	
+	// Isi di sini
+	int i, j, position, swap;
+	char tukar[20];
+	
+	// Type Rumah
+	for (i = index_data- 1; i > 0; i--) {
+		for (j = index_data - 1; j >= index_data - i; j--) {
+			if (strcmp(rumah[j].type, rumah[j-1].type) < 0) {
+				strcpy(tukar, rumah[j].type);
+				strcpy(rumah[j].type, rumah[j-1].type);
+				strcpy(rumah[j-1].type, tukar);
+			}
+		}
+	}
+	
+	// Harga
+	for(i = 0; i < index_data - 1; i++){
+		position=i;
+		for(j = i + 1; j < index_data; j++){
+			if(rumah[position].harga > rumah[j].harga){
+				position = j;
+			}
+		}
+		if(position != i){
+			swap = rumah[i].harga;
+			rumah[i].harga = rumah[position].harga;
+			rumah[position].harga = swap;
+		}
+	}
+	
+}
+
+// SORTING HARGA DESCENDING
+// =====================================================
+void sort_harga_descending(){
+	system("cls");
+    printf(" ================================================================== \n");
+	printf(" -------------------- Sorting Harga Descending -------------------- \n\n");
+	
+	// Isi di sini
+	int i, j, position, swap;
+	char tukar[20];
+	
+	// Type Rumah
+	for (i = index_data- 1; i > 0; i--) {
+		for (j = index_data - 1; j >= index_data - i; j--) {
+			if (strcmp(rumah[j].type, rumah[j-1].type) > 0) {
+				strcpy(tukar, rumah[j].type);
+				strcpy(rumah[j].type, rumah[j-1].type);
+				strcpy(rumah[j-1].type, tukar);
+			}
+		}
+	}
+	
+	// Harga
+	for(i = 0; i < index_data - 1; i++){
+		position=i;
+		for(j = i + 1; j < index_data; j++){
+			if(rumah[position].harga < rumah[j].harga){
+				position = j;
+			}
+		}
+		if(position != i){
+			swap = rumah[i].harga;
+			rumah[i].harga = rumah[position].harga;
+			rumah[position].harga = swap;
+		}
+	}
+	
+}
+
+// 6. CARI TIPE RUMAH
+// =====================================================
+void cari_rumah(){
+	system("cls");
+    printf(" ================================================================== \n");
+	printf(" ------------------------ Cari Tipe Rumah ------------------------- \n\n");
+	
+	int i,flag;
+	char item[20]; 
+	 
+    printf("\n Type rumah yang dicari: ");
+	fflush(stdin);
+    scanf("%[^\n]", &item);  
+    
+	for (i = 0; i < index_data; i++){  
+        if(strcmp(rumah[i].type, item) == 0){  
+            flag = 1;  
+            break; 
+        } else   
+        
+		flag = 0;  
+    }   
+    
+	if(flag == 1){
+		printf("\n Data tipe rumah %s ditemukan di index %d!\n\n", item, i); 
+		printf(" Tipe Rumah\t: %s \n", rumah[i].type);
+		printf(" Harga Cash\t: Rp. %0.2f \n", rumah[i].harga);
+	} else {
+		printf("\n Data tipe rumah %s tidak ditemukan!", item);
+	}
+}
+
+// 7. HAPUS DATA
+// =====================================================
+void hapus_data(){
+	system("cls");
+    printf(" ================================================================== \n");
+	printf(" ------------------------ HAPUS DATA RUMAH ------------------------ \n\n");
+	
+	daftar_rumah();
+	
+	printf(" ================================================================== \n");
+	printf(" Pilih sesuai nomor urut: ");
+	scanf("%d", &pilihan);
+	
+	for (int i = pilihan - 1; i < index_data; i++){
+		strcpy(rumah[i].type, rumah[i+1].type);
+		rumah[i].luas = rumah[i+1].luas;
+		rumah[i].panjang = rumah[i+1].panjang;
+		rumah[i].lebar = rumah[i+1].lebar;
+		rumah[i].harga = rumah[i+1].harga;
+	}
+	
+	system("cls");
+    printf(" ================================================================== \n");
+	printf(" ------------------------ HAPUS DATA RUMAH ------------------------ \n\n");
+	
+	daftar_rumah();
+}
+
+
+// 8. SYARAT-SYARAT DAN DOKUMEN
+// =====================================================
+void syarat_dokumen(){
+    system("cls");
+    printf(" ================================================================== \n");
+	printf(" ------------------- Syarat-syarat dan dokumen -------------------- \n\n");
+
+	printf(" Ada beberapa persyaratan dasar dalam pengajuan KPR, yaitu :\n\n");
+	printf(" [1]. Berusia minimal 21 tahun\n");
+	printf(" [2]. Memiliki pekerjaan atau penghasilan tetap (pegawai/wiraswasta) minimal 1 tahun\n");
+	printf(" [3]. Fotokopi KTP/Paspor/KITAS/KITAP\n");
+	printf(" [4]. Slip gaji bulan terakhir/Surat Keterangan Gaji\n");
+	printf(" [5]. Fotokopi Rekening Koran\n");
+	printf(" [6]. Fotokopi Surat Izin Praktek\n");
+	printf(" [7]. Fotokopi Akte Perusahaan dan atau SIUP dan NPWP\n");
+	printf(" [8]. Fotokopi Tagihan Bulanan Kartu Kredit 1 Bulan Terakhir\n");
+	printf(" [9]. Fotokopi Kartu kredit\n");
+	
+	printf("\n ------------------------------------------------------------------\n");
+	printf(" ==================================================================\n");
+}
+
+// PENUTUP
+// =====================================================
+// TERIMA KASIH (KELOMPOK 1) PEMROGRAMAN LANJUT D081

@@ -5,11 +5,13 @@
 
 
 
-### Gambar menu utama
+#### Gambar menu utama
 
-<img src="a.jpeg" style="width:70%"/>
+
 
 #### Gambar menu daftar tipe rumah
+![WhatsApp Image 2021-12-26 at 1 36 50 PM](https://user-images.githubusercontent.com/96411548/147416015-30afdeac-648a-47e3-b78a-d1ceac2fd695.jpeg)
+
 
 
 ## Nama Kelompok

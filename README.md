@@ -14,6 +14,9 @@
 
 
 #### Simulasi KPR
+![WhatsApp Image 2021-12-26 at 1 38 28 PM](https://user-images.githubusercontent.com/96411548/147422179-fe44de60-0228-46f1-8490-9628eea7aa32.jpeg)
+
+#### Syarat - syarat dan dokumen KPR
 
 
 

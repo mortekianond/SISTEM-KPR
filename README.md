@@ -6,11 +6,14 @@
 
 
 #### Gambar menu utama
-
+![WhatsApp Image 2021-12-26 at 1 35 54 PM](https://user-images.githubusercontent.com/96411548/147416076-8cc83cbf-50a2-4fcd-a68d-98442874fbf1.jpeg)
 
 
 #### Gambar menu daftar tipe rumah
 ![WhatsApp Image 2021-12-26 at 1 36 50 PM](https://user-images.githubusercontent.com/96411548/147416015-30afdeac-648a-47e3-b78a-d1ceac2fd695.jpeg)
+
+
+#### Simulasi KPR
 
 
 

@@ -270,39 +270,7 @@ void buat_data(){
 	
 }
 
-// 4. PERBARUI DATA
-// =====================================================
-void perbarui_data(){
-    system("cls");
-    printf(" ================================================================== \n");
-	printf(" ------------------------- Perbarui data -------------------------- \n\n");
-	
-	int i,flag;
-	char type[20];
-
-	printf(" Masukkan type rumah yang ingin diubah: ");
-	fflush(stdin);
-	scanf("%s", &type);
-	
-	for (i = 0; i < index_data; i++){  
-        if(strcmp(rumah[i].type, type) == 0){  
-            flag = 1; 
-            break; 
-        } else   
-        
-		flag = 0;  
-    }   
-    
-	if(flag == 1){
-		printf("\n Data tipe rumah %s ditemukan di daftar rumah ke-%d!\n\n", type, i+1);
-		input_data(i);
-	} else {
-		printf("\n Data tipe rumah %s tidak ditemukan!", type);
-	}
-
-}
-
-// 5. URUTKAN TIPE RUMAH
+// 4. URUTKAN TIPE RUMAH
 // =====================================================
 void urutkan_rumah(){
 	char kembali;
@@ -428,7 +396,7 @@ void sort_harga_descending(){
 	
 }
 
-// 6. CARI TIPE RUMAH
+// 5. CARI TIPE RUMAH
 // =====================================================
 void cari_rumah(){
 	system("cls");
@@ -460,7 +428,7 @@ void cari_rumah(){
 	}
 }
 
-// 7. HAPUS DATA
+// 6. HAPUS DATA
 // =====================================================
 void hapus_data(){
 	system("cls");
@@ -469,7 +437,7 @@ void hapus_data(){
 	
 	daftar_rumah();
 	
-	printf(" ================================================================== \n");
+	printf(" ================================================================== \n\n");
 	printf(" Pilih sesuai nomor urut: ");
 	scanf("%d", &pilihan);
 	
@@ -481,15 +449,13 @@ void hapus_data(){
 		rumah[i].harga = rumah[i+1].harga;
 	}
 	
-	system("cls");
-    printf(" ================================================================== \n");
-	printf(" ------------------------ HAPUS DATA RUMAH ------------------------ \n\n");
+	index_data--;
 	
 	daftar_rumah();
 }
 
 
-// 8. SYARAT-SYARAT DAN DOKUMEN
+// 7. SYARAT-SYARAT DAN DOKUMEN
 // =====================================================
 void syarat_dokumen(){
     system("cls");

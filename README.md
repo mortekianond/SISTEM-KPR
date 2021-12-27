@@ -58,6 +58,9 @@ __2. LUAS TIPE RUMAH TERSEBUT__
 
 __3. HARGA CASH RUMAH TERSEBUT__
 
+berikut tambpilan datanya
+![WhatsApp Image 2021-12-26 at 1 36 50 PM](https://user-images.githubusercontent.com/96411548/147416015-30afdeac-648a-47e3-b78a-d1ceac2fd695.jpeg)
+
 ## Metode Yang Digunakan
 
 Metode yang diterapkan 

@@ -23,14 +23,18 @@
 
 ## Nama Kelompok
 
-1. MUHAMMAD RANDY (20081010153)
-2. ANANDA KRISNA P(20081010065)
-3. MORTEKIANO NIGEL(20081010134)	
-4. ABDUL WASI A (20081010165)
-5. M ALFA RIZKI VALENTINO (2008101019)					
+1. MUHAMMAD RANDY                  (20081010153)
+2. ANANDA KRISNA PUTRA PAMUNGKAS   (20081010065)
+3. MORTEKIANO NIGEL                (20081010134)	
+4. ABDUL WASI AL-AFIF              (20081010165)
+5. MUHAMMAD ALFA RIZKI VALENTINO   (2008101019)
+
+## Kelas : PEMROGRAMAN LANJUT D081
+## Dosen Pengampu : Fawwaz Ali Akbar, S.Kom, M.Kom
 
 
 ## Deskripsi Project Akhir
+
 
 Rumah merupakan satu dari tiga kebutuhan pokok manusia yang harus terpenuhi.
 Rumah merupakan tempat dimana manusia dapat beristirahat dan ruang untuk diri sendiri
@@ -44,6 +48,7 @@ daerah tertentu)
 
 Dengan Sistem penghitungan KPR yang kami kerjakan ini semoga membantu orang - orang dalam
 memperkirakan biaya untuk pembelian sebuah rumah secara KPR
+
 
 ## Data Yang Digunakan
 
@@ -85,6 +90,7 @@ Metode yang diterapkan
 8. Keluar
 
 ![WhatsApp Image 2021-12-26 at 1 35 54 PM](https://user-images.githubusercontent.com/96411548/147416076-8cc83cbf-50a2-4fcd-a68d-98442874fbf1.jpeg)
+
 
 ## Cara Penggunaan Aplikasi
 

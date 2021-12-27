@@ -97,4 +97,4 @@ Metode yang diterapkan
 7. Pada menu yang ketujuh, terdapat syarat - syarat dan dokumen yang dibutuhkan jika ingin kredit rumah.
 8. Pada menu yang terakhir, adalah perintah untuk keluar dari aplikasi.
 
-
+#

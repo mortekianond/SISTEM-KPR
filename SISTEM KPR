@@ -8,13 +8,11 @@
 // =====================================================
 struct kpr{
 	char type[20];
-	float luas;
+	float luas;	
 	float panjang;
 	float lebar;
 	float harga;
 } rumah[50];
-
-
 
 // DEKLARASI DATA RUMAH
 // =====================================================
@@ -22,9 +20,8 @@ void cekdatarumah();
 void cekdatarumah(){
 	// Type ============================================
     char house_type[5][20] = {"36", "45", "54", "60", "70"};
-//    int house_type[5] = {36, 45, 54, 60, 70};
     
-    // Cash ============================================
+    // Harga ============================================
     float house_price[5] = {120000000, 320000000, 480000000, 720000000, 920000000};
     
     // Specification ===================================
@@ -319,8 +316,8 @@ void urutkan_rumah(){
 			printf(" ---------------------- Urutkan type rumah ------------------------ \n\n");
 			
 			printf("\n URUTKAN TIPE RUMAH:");
-			printf("\n [1]. Urutkan harga ascending");
-			printf("\n [2]. Urutkan harga descending");
+			printf("\n [1]. Urutkan harga ascending (bubble sort)");
+			printf("\n [2]. Urutkan harga descending (selection sort)");
 			printf("\n [3]. Keluar");
 			printf("\n\n Input Pilihan Nomor Menu : ");
 			scanf("%d", &pilihan);
@@ -361,7 +358,7 @@ void sort_harga_ascending(){
 	printf(" --------------------- Sorting Harga Ascending -------------------- \n\n");
 	
 	// Isi di sini
-	int i, j, position, swap;
+	int i, j, position, swap, tmp;
 	char tukar[20];
 	
 	// Type Rumah
@@ -376,17 +373,13 @@ void sort_harga_ascending(){
 	}
 	
 	// Harga
-	for(i = 0; i < index_data - 1; i++){
-		position=i;
-		for(j = i + 1; j < index_data; j++){
-			if(rumah[position].harga > rumah[j].harga){
-				position = j;
+	for(i = index_data- 1; i > 0; i--){
+		for(i = index_data- 1; i > 0; i--){
+			if(rumah[j].harga > rumah[j+1].harga){
+				tmp = rumah[j].harga;
+				rumah[j].harga = rumah[j+1].harga;
+				rumah[j+1].harga = tmp;
 			}
-		}
-		if(position != i){
-			swap = rumah[i].harga;
-			rumah[i].harga = rumah[position].harga;
-			rumah[position].harga = swap;
 		}
 	}
 	
@@ -404,13 +397,17 @@ void sort_harga_descending(){
 	char tukar[20];
 	
 	// Type Rumah
-	for (i = index_data- 1; i > 0; i--) {
-		for (j = index_data - 1; j >= index_data - i; j--) {
-			if (strcmp(rumah[j].type, rumah[j-1].type) > 0) {
-				strcpy(tukar, rumah[j].type);
-				strcpy(rumah[j].type, rumah[j-1].type);
-				strcpy(rumah[j-1].type, tukar);
+	for(i = 0; i < index_data - 1; i++){
+		position=i;
+		for(j = i + 1; j < index_data; j++){
+			if(strcmp(rumah[position].type, rumah[j].type) < 0){
+				position = j;
 			}
+		}
+		if(position != i){
+			strcpy(tukar, rumah[i].type);
+			strcpy(rumah[i].type, rumah[position].type);
+			strcpy(rumah[position].type, tukar);
 		}
 	}
 	

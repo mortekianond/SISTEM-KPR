@@ -66,7 +66,7 @@ Metode yang diterapkan
 - Program perhitungan simulasi KPR 
 - Searching data
 - Hapus data
-- Sorting data (Bubble sort dan Insertion sort)
+- Sorting data (Bubble sort dan Selection sort)
 - OFstream 
 - Clearscreen 
 
@@ -85,6 +85,13 @@ Metode yang diterapkan
 
 ## Cara Penggunaan Aplikasi
 
-1. 
+1. Pada daftar menu yang ada, jika Anda memilih nomor 1 maka akan memunculkan semua tipe rumah yang tersedia dan siap untuk dibuat KPRnya. (all)
+2. Pada menu yang kedua, Anda dapat menggunakan simulasi KPR (Suku Bunga KPR Fixed) menggunakan sistem kami. (all)
+3. Pada menu yang ketiga, Anda dapat membuat data tipe rumah baru beserta spesifikasinya. (Pengembang properti)
+4. Pada menu yang keempat, Anda dapat mengurutkan data rumah berdasarkan tipe rumah atau harga baru. Metode yang dipakai adalah bubble sort dan selection sort untuk pengurutannya. (all)
+5. Pada menu yang kelima, Anda dapat mencari data rumah. (all)
+6. Pada menu yang keenam, Anda dapat menghapus data rumah. (Pengembang properti)
+7. Pada menu yang ketujuh, terdapat syarat - syarat dan dokumen yang dibutuhkan jika ingin kredit rumah.
+8. Pada menu yang terakhir, adalah perintah untuk keluar dari aplikasi.
 
 

@@ -98,5 +98,5 @@ Metode yang diterapkan
 8. Pada menu yang terakhir, adalah perintah untuk keluar dari aplikasi.
 
 
-### Thanks a lot
+### Thanks a lot 
 

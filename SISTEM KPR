@@ -1,5 +1,6 @@
 // IMPORT LIBRARY
 // =====================================================
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -25,6 +26,7 @@ void cekdatarumah(){
     float house_price[5] = {120000000, 320000000, 480000000, 720000000, 920000000};
     
     // Specification ===================================
+    
     float house_area[5] = {36, 45, 54, 60, 70};
     float house_lenght[5] = {6, 7.5, 6, 10, 10};
     float house_width[5] = {6, 6, 9, 6, 7};
@@ -39,10 +41,12 @@ void cekdatarumah(){
     }
 }
 
+
 // VARIABEL GLOBAL
 // =====================================================
 int pilihan;
 int index_data = 5;
+
 
 // DEKLARASI FUNGSI
 // =====================================================
@@ -51,6 +55,7 @@ void close();
 void input_data(int index);
 float rumus_kpr();
 void read_data();
+
 
 // MENU
 void daftar_rumah();
@@ -70,6 +75,7 @@ void sort_harga_descending();
 void linear_search();
 void binary_search();
 
+
 // MAIN FUNCTION
 // =====================================================
 int main(){
@@ -82,6 +88,7 @@ int main(){
 	// =================================================
 	do {
 		menu:
+
 			system("cls");
 			printf("===============================================================================================\n");
 			printf("===============================================================================================\n");
@@ -90,6 +97,7 @@ int main(){
 			printf("====================================== KELOMPOK 1 =============================================\n");
 			printf("===============================================================================================\n");
 			printf("===============================================================================================\n");
+
 
 			printf("\n MAIN MENU:");
 			printf("\n [1]. Daftar Tipe Rumah");
@@ -155,6 +163,7 @@ int main(){
 
 	return 0;
 }
+
 
 // CLOSE FUNCTION
 // =====================================================
@@ -224,7 +233,7 @@ void simulasi_kpr(){
     printf(" ================================================================== \n");
 	printf(" -------------------------- Simulasi KPR -------------------------- \n\n");
 	
-    printf(" Terima kasih telah menggunakan kami.\n\n");
+    printf(" Selamat Datang, Halo calon pencari hunian idaman. Selahkan memanfaat pelayanan kami. Terima kasih telah.\n\n");
     
     float harga_rumah, persentase_dp, uang_muka, pinjaman, tenor_tahun, tenor_bulan, bunga_pertahun, angsuran_perbulan;
     
@@ -463,8 +472,8 @@ void syarat_dokumen(){
 	printf(" ------------------- Syarat-syarat dan dokumen -------------------- \n\n");
 
 	printf(" Ada beberapa persyaratan dasar dalam pengajuan KPR, yaitu :\n\n");
-	printf(" [1]. Berusia minimal 21 tahun\n");
-	printf(" [2]. Memiliki pekerjaan atau penghasilan tetap (pegawai/wiraswasta) minimal 1 tahun\n");
+	printf(" [1]. Berusia minimal 21 tahun \n");
+	printf(" [2]. Memiliki pekerjaan atau penghasilan tetap (pegawai/wiraswasta) minimal 2 tahun\n");
 	printf(" [3]. Fotokopi KTP/Paspor/KITAS/KITAP\n");
 	printf(" [4]. Slip gaji bulan terakhir/Surat Keterangan Gaji\n");
 	printf(" [5]. Fotokopi Rekening Koran\n");
@@ -472,11 +481,15 @@ void syarat_dokumen(){
 	printf(" [7]. Fotokopi Akte Perusahaan dan atau SIUP dan NPWP\n");
 	printf(" [8]. Fotokopi Tagihan Bulanan Kartu Kredit 1 Bulan Terakhir\n");
 	printf(" [9]. Fotokopi Kartu kredit\n");
+	printf(" [10].Fotokopi suami/istri jika sudah menikah\n");
+	printf(" [11].Fotokopi kartu keluarga\n");
+	printf(" [12].Fotolopi NPWP\n");
 	
-	printf("\n ------------------------------------------------------------------\n");
+	printf("\n ----------------------------------------------------------------\n");
 	printf(" ==================================================================\n");
 }
 
 // PENUTUP
 // =====================================================
 // TERIMA KASIH (KELOMPOK 1) PEMROGRAMAN LANJUT D081
+// 

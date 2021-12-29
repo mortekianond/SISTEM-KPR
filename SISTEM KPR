@@ -1,11 +1,13 @@
 // IMPORT LIBRARY
 // =====================================================
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 
 // STRUCT DATA RUMAH
 // =====================================================
+
 struct kpr{
 	char type[20];
 	float luas;	
@@ -263,7 +265,7 @@ void buat_data(){
     printf(" ================================================================== \n");
 	printf(" ------------------------- Buat Data Baru ------------------------- \n\n");
 	
-	printf(" Isi data di di bawah ini untuk membuat data baru! \n\n");
+	printf(" Isi data di di bawah ini untuk membuat data rumah baru! \n\n");
 	
 	input_data(index_data);
 	index_data++;
